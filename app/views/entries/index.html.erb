@@ -1,0 +1,19 @@
+<h1>Movie Log</h1>
+
+<%= link_to 'Add a new movie', new_entry_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Date</th>
+  </tr>
+
+  <% @entries.each do |entry| %>
+    <tr>
+      <td><%= entry.title %></td>
+      <td><%= entry.date %></td>
+      <td><%= link_to 'Show', entry_path(entry) %></td>
+      <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    </tr>
+  <% end %>
+</table>
